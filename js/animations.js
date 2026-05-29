@@ -97,9 +97,6 @@ export function getAnimationState() {
 }
 
 export function updateAnimations(delta, canvasWidth, canvasHeight) {
-  updateParticles(delta);
-  decayScreenShake(delta);
-
   if (!current) {
     if (queue.length > 0) {
       current = queue.shift();

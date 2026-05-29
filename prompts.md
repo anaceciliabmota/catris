@@ -48,3 +48,19 @@ obs: depois desse prompt, uma funcionalidade q ja funcionava com o space parou d
 obs:  os gatinhos nao ficaram legais, ai a gnt pediu para a peca toda ser um gatinho, ai melhorou um pouco, mas como ele quebra a peça futuramente no jogo, ainda assim nao ficou um gato unico por peça
 
 prompt q a gnt usou para essa melhora: Ajuste a estetica dos gatinhos para cda bloco ser um gato inteiro. entao um bloco em l eh um gato longuinho em l. voce consegue fazer isso? 
+
+obs: quando fizemos os testes, algumas vezes o jogo descia automaticamente todas as peças, sem nenhuma interação do usuário, pedimos para corrigir com esse prompt:
+
+``Considerando todo o contexto do projeot, quando fui jogar, percebi que algumas vezes, quando uma linha se completava no tetris, todas as peças seguintes desciam automaticamente, sem que o usuário tivesse clicado em algum botão. Corrija essa funcionalidade sem causar problemas nas funcionalidades já existentes e que funcionam bem``
+
+# Prompt de Revisão de Funcionalidades
+Em plan mode: 
+``Quero montar um plano de revisão de todas as funcionalidades implementadas que devemos testar para saber se está tudo funcionando como deveria, inclusive as pontuações. Faça esse plano de teste para a versão final do jogo``
+
+obs: quando fizemos os testes, algumas vezes ficavam resquícios das jogadas passadas, corrigimos com esse prompt:
+
+``Considerando todo o contexto do projeto, quando fui jogar, percebi que algumas vezes, As moedas que aparecem, não somem por algumas rodadas e também, as vezes, mesmo completando uma linha, a linha não some, só depois de mais uma jogada. Corrija essa funcionalidade sem causar problemas nas funcionalidades já existentes e que funcionam bem``
+
+obs: correção de menu recorde:
+
+``O menu de record não está mais atualizando, mesmo ultrapassando a pontuação mais alta, ele não altera``

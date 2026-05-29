@@ -35,6 +35,8 @@ import {
   clearParticles,
   spawnLineClearParticles,
   triggerScreenShake,
+  updateParticles,
+  decayScreenShake,
 } from './animations.js';
 import {
   initAudio,
@@ -148,8 +150,8 @@ function updateHUD(bumpScore = false) {
 function checkHighScore() {
   const previous = highScore;
   highScore = tryUpdateHighScore(score);
-  lastGameWasNewRecord = highScore > previous;
-  if (lastGameWasNewRecord) {
+  if (highScore > previous) {
+    lastGameWasNewRecord = true;
     highScorePanel?.classList.add('is-new-record');
   }
   highScoreEl.textContent = String(highScore);
@@ -456,6 +458,9 @@ function gameLoop(timestamp) {
   const delta = timestamp - lastTimestamp;
   lastTimestamp = timestamp;
 
+  updateParticles(delta);
+  decayScreenShake(delta);
+
   if (state === 'animating') {
     updateAnimations(delta, gameCanvas.width, gameCanvas.height);
     render(board, null, nextType);
@@ -605,9 +610,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('keyup', (e) => {
-  if (state === 'playing') {
-    keysDown.delete(e.code);
-  }
+  keysDown.delete(e.code);
+  delete repeatTimers[e.code];
 });
 
 gameCanvas.addEventListener('click', handleStartInteraction);

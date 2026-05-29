@@ -57,6 +57,8 @@ export function clearRows(board, rowIndices) {
   const sorted = [...rowIndices].sort((a, b) => b - a);
   for (const r of sorted) {
     board.splice(r, 1);
+  }
+  for (let i = 0; i < sorted.length; i++) {
     board.unshift(Array(COLS).fill(0));
   }
   return sorted.length;
