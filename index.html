@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catris — Tetris dos Gatos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🐱 Catris</h1>
+      <p class="tagline">Tetris dos Gatinhos</p>
+    </header>
+    <div class="game-area" id="game-area" data-state="title">
+      <div class="canvas-wrap">
+        <canvas id="game" width="300" height="600" aria-label="Campo de jogo Catris"></canvas>
+      </div>
+      <aside class="sidebar">
+        <div class="panel" id="next-panel">
+          <h2>Próximo gato</h2>
+          <canvas id="next" width="120" height="120" aria-label="Próxima peça"></canvas>
+        </div>
+        <div class="panel" id="scores-panel">
+          <h2>Melhores pontuações</h2>
+          <ol id="score-history" class="score-history"></ol>
+          <p class="panel-hint">Clique no jogo ou Enter para começar</p>
+        </div>
+        <div class="panel stats" id="stats-panel">
+          <p>Nível: <span id="level" class="stat-value">1</span></p>
+          <p>Linhas: <span id="lines" class="stat-value">0</span></p>
+          <p>Pontuação: <span id="score" class="stat-value">0</span></p>
+          <p class="high-score">Recorde: <span id="high-score" class="stat-value">0</span></p>
+          <p id="status" class="status" hidden></p>
+        </div>
+        <div class="panel audio-panel">
+          <button type="button" id="mute-btn" class="mute-btn" aria-pressed="false">🔊 Som on</button>
+        </div>
+        <div class="panel instructions">
+          <h2>Controles</h2>
+          <ul>
+            <li><kbd>←</kbd> <kbd>→</kbd> Mover</li>
+            <li><kbd>↑</kbd> ou <kbd>X</kbd> Girar</li>
+            <li><kbd>↓</kbd> Queda rápida</li>
+            <li><kbd>Espaço</kbd> Queda instantânea</li>
+            <li><kbd>P</kbd> Pausar</li>
+            <li><kbd>M</kbd> Som on/off</li>
+            <li><kbd>Esc</kbd> Menu</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script type="module" src="js/game.js"></script>
+</body>
+</html>
